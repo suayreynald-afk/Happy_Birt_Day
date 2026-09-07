@@ -1,0 +1,287 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating decorations -->
+    <div class="floating">
+        <span>✨</span>
+        <span>🎈</span>
+        <span>⭐</span>
+        <span>💫</span>
+        <span>🎉</span>
+    </div>
+
+    <!-- Music -->
+    <audio id="birthdayMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
+
+    <button
+        class="music-button"
+        id="musicButton"
+        onclick="toggleMusic()">
+        🔇
+    </button>
+
+
+    <!-- =========================
+         HOME PAGE
+    ========================== -->
+
+    <section id="home" class="page active">
+
+        <div class="content">
+
+            <div class="home-gift">
+                🎁
+            </div>
+
+            <h1>
+                I Have Something For You
+            </h1>
+
+            <p>
+                A little surprise has been waiting for you...
+            </p>
+
+            <button class="main-button" onclick="openBirthday()">
+               Open 💝
+            </button>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BIRTHDAY PAGE
+    ========================== -->
+
+    <section id="birthday" class="page">
+
+        <div class="content">
+
+            <h1 class="birthday-title">
+
+                <span id="typingText"></span>
+                <span class="cursor">|</span>
+
+            </h1>
+
+            <p>
+                Today is a special day because it's all about you. 🎉
+            </p>
+
+            <div class="choice-container">
+
+                <button
+                    class="choice-button"
+                    onclick="showPage('letter')">
+
+                    💌 Letter
+
+                </button>
+
+                <button
+                    class="choice-button"
+                    onclick="showPage('gift')">
+
+                    🎁 Gift
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         LETTER PAGE
+    ========================== -->
+
+    <section id="letter" class="page">
+
+        <button
+            class="back-button"
+            onclick="showPage('birthday')">
+
+            ← Back
+
+        </button>
+
+        <div class="content">
+
+            <div class="letter-card">
+
+                <h2>
+                    💌 A Little Letter
+                </h2>
+
+                <p>
+                    Dear Birthday Person,
+                </p>
+
+                <p>
+                    Happy Birthday! 🎂✨
+                </p>
+
+                <p>
+                    I hope this special day brings you
+                    happiness, laughter, and many beautiful
+                    memories.
+                </p>
+
+                <p>
+                    You deserve all the good things that
+                    life has to offer.
+                </p>
+
+                <p>
+                    I hope this new chapter brings you
+                    closer to your dreams and gives you
+                    countless reasons to smile.
+                </p>
+
+                <p>
+                    Thank you for being such an amazing
+                    person.
+                </p>
+
+                <p>
+                    Never forget that you are appreciated,
+                    valued, and loved.
+                </p>
+
+                <p>
+                    May your birthday be filled with
+                    wonderful surprises. ❤️
+                </p>
+
+                <p class="signature">
+                    Happy Birthday! 🎉
+                    <br><br>
+                    — From Someone Who Cares ❤️
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         GIFT PAGE
+    ========================== -->
+
+    <section id="gift" class="page">
+
+        <button
+            class="back-button"
+            onclick="showPage('birthday')">
+
+            ← Back
+
+        </button>
+
+        <div class="gift-content">
+
+            <h2>
+                🎁 Your Gift
+            </h2>
+
+            <p>
+                Tap the gift box to open your surprise!
+            </p>
+
+
+            <!-- 3D Gift -->
+
+            <div class="gift-box-container">
+
+                <div
+                    class="gift-box"
+                    id="giftBox"
+                    onclick="openGift()">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+
+                    <div class="box-lid"></div>
+
+                    <div class="box-body"></div>
+
+                    <div class="ribbon-vertical"></div>
+
+                </div>
+
+            </div>
+
+
+            <p id="giftMessage">
+                🎁 Click the gift!
+            </p>
+
+
+            <!-- Photo Gallery -->
+
+            <div
+                class="gallery hidden-gallery"
+                id="gallery">
+
+                <img
+                    class="photo"
+                    src="images/photo1.jpg"
+                    alt="Memory 1">
+
+                <img
+                    class="photo"
+                    src="images/photo2.jpg"
+                    alt="Memory 2">
+
+                <img
+                    class="photo"
+                    src="images/photo3.jpg"
+                    alt="Memory 3">
+
+                <img
+                    class="photo"
+                    src="images/photo4.jpg"
+                    alt="Memory 4">
+
+                <!--
+                Add more photos here:
+
+                <img
+                    class="photo"
+                    src="images/photo5.jpg"
+                    alt="Memory 5">
+                -->
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```
