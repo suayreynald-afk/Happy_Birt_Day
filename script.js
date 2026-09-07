@@ -44,7 +44,7 @@ function startTyping() {
 
     typingStarted = true;
 
-    const text = "Happy Birthday! 🎂";
+    const text = "Happy Birthday!🎉 ";
     const typingText = document.getElementById("typingText");
 
     let index = 0;
@@ -128,7 +128,7 @@ function openGift() {
     giftBox.classList.add("open");
 
     message.textContent =
-        "🎉 Surprise! These memories are for you! ❤️";
+        "🎉 Surprise! These memories are for you!";
 
     setTimeout(function() {
 
