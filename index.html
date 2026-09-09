@@ -1,281 +1,36 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Birthday Surprise 🎂</title>
-
-    <!-- CSS -->
+    <meta name="theme-color" content="#17131f">
+    <title>A little story for you</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-    <!-- Floating decorations -->
-    <div class="floating">
-        <span>✨</span>
-        <span>🎈</span>
-        <span>⭐</span>
-        <span>💫</span>
-        <span>🎉</span>
-    </div>
-
-    <!-- Music -->
-    <audio id="birthdayMusic" loop>
-        <source src="music/birthday.mp3" type="audio/mpeg">
-    </audio>
-
-    <button
-        class="music-button"
-        id="musicButton"
-        onclick="toggleMusic()">
-        🔇
-    </button>
-
-
-    <!-- =========================
-         HOME PAGE
-    ========================== -->
-
-    <section id="home" class="page active">
-
-        <div class="content">
-
-            <h1>
-                I Have Something For You
-            </h1>
-
-            <p>
-                Click “Open” and discover a little surprise waiting for you!
-            </p>
-
-            <button class="main-button" onclick="openBirthday()">
-               Open 
-            </button>
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         BIRTHDAY PAGE
-    ========================== -->
-
-    <section id="birthday" class="page">
-
-        <div class="content">
-
-            <h1 class="birthday-title">
-
-                <span id="typingText"></span>
-            </h1>
-
-            <p>
-                Open the two surprises waiting for you!
-           </p>
-
-            <div class="choice-container">
-
-                <button
-                    class="choice-button"
-                    onclick="showPage('letter')">
-
-                    💌 Letter
-
-                </button>
-
-                <button
-                    class="choice-button"
-                    onclick="showPage('gift')">
-
-                    🎁 Gift
-
-                </button>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         LETTER PAGE
-    ========================== -->
-
-    <section id="letter" class="page">
-
-        <button
-            class="back-button"
-            onclick="showPage('birthday')">
-
-            ← Back
-
-        </button>
-
-        <div class="content">
-
-            <div class="letter-card">
-
-                <h2>
-                    A Little Letter
-                </h2>
-
-                <p>
-                    Dear Birthday Person,
-                </p>
-
-                <p>
-                    Happy Birthday! 
-                </p>
-
-                <p>
-                    I hope this special day brings you
-                    happiness, laughter, and many beautiful
-                    memories.
-                </p>
-
-                <p>
-                    You deserve all the good things that
-                    life has to offer.
-                </p>
-
-                <p>
-                    I hope this new chapter brings you
-                    closer to your dreams and gives you
-                    countless reasons to smile.
-                </p>
-
-                <p>
-                    Thank you for being such an amazing
-                    person.
-                </p>
-
-                <p>
-                    Never forget that you are appreciated,
-                    valued, and loved.
-                </p>
-
-                <p>
-                    May your birthday be filled with
-                    wonderful surprises. 
-                </p>
-
-                <p class="signature">
-                    Happy Birthday! 
-                    <br><br>
-                    — From Reynald
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         GIFT PAGE
-    ========================== -->
-
-    <section id="gift" class="page">
-
-        <button
-            class="back-button"
-            onclick="showPage('birthday')">
-
-            ← Back
-
-        </button>
-
-        <div class="gift-content">
-
-            <h2>
-                🎁 Your Gift
-            </h2>
-
-            <p>
-                Tap the gift box to open your surprise!
-            </p>
-
-
-            <!-- 3D Gift -->
-
-            <div class="gift-box-container">
-
-                <div
-                    class="gift-box"
-                    id="giftBox"
-                    onclick="openGift()">
-
-                    <div class="bow-left"></div>
-                    <div class="bow-right"></div>
-
-                    <div class="box-lid"></div>
-
-                    <div class="box-body"></div>
-
-                    <div class="ribbon-vertical"></div>
-
-                </div>
-
-            </div>
-
-
-            <p id="giftMessage">
-                🎁 Click the gift!
-            </p>
-
-
-            <!-- Photo Gallery -->
-
-            <div
-                class="gallery hidden-gallery"
-                id="gallery">
-
-                <img
-                    class="photo"
-                    src="images/photo1.jpg"
-                    alt="Memory 1">
-
-                <img
-                    class="photo"
-                    src="images/photo2.jpg"
-                    alt="Memory 2">
-
-                <img
-                    class="photo"
-                    src="images/photo3.jpg"
-                    alt="Memory 3">
-
-                <img
-                    class="photo"
-                    src="images/photo4.jpg"
-                    alt="Memory 4">
-
-                <!--
-                Add more photos here:
-
-                <img
-                    class="photo"
-                    src="images/photo5.jpg"
-                    alt="Memory 5">
-                -->
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- JavaScript -->
+    <div class="ambient" aria-hidden="true"><span class="ambient-star star-one"></span><span class="ambient-star star-two"></span><span class="ambient-star star-three"></span><span class="ambient-line"></span></div>
+    <audio id="birthdayMusic" loop preload="metadata"><source src="music/Happy_birth_day.mp3" type="audio/mpeg"></audio>
+    <header class="site-header">
+        <p class="brand">for <span data-name>[HER_NAME]</span></p>
+        <div class="header-actions"><div class="progress-wrap" aria-live="polite"><span class="progress-label">your surprise</span><strong id="progressText">0 / 5</strong></div><button class="icon-button" id="musicButton" type="button" aria-label="Turn music on" aria-pressed="false" title="Turn music on">♪</button></div>
+    </header>
+    <main>
+        <section class="screen active" id="opening" aria-labelledby="openingTitle">
+            <div class="opening-copy content-narrow"><p class="eyebrow">A small thing, made carefully</p><h1 id="openingTitle" class="display">Hey.<br><em>I made something for you.</em></h1><p class="lede">It is not very loud. It is just a little corner of the internet for the person who makes ordinary days feel less ordinary.</p><button class="primary-button" id="beginButton" type="button">Begin the surprise <span aria-hidden="true">&#8594;</span></button><p class="microcopy">Take your time. There is no wrong way through this.</p></div>
+        </section>
+        <section class="screen" id="ready" aria-labelledby="readyTitle" hidden><div class="content-narrow ready-content"><p class="eyebrow">Before the first chapter</p><h2 id="readyTitle">Are you ready?</h2><p class="lede">Hold the heart for a moment. Some things deserve more than a quick tap.</p><button class="hold-heart" id="holdHeart" type="button" aria-label="Hold the heart to continue"><span class="heart-mark" aria-hidden="true">&#9829;</span><span class="hold-progress" id="holdProgress"></span></button><p class="instruction" id="holdInstruction">Press and hold</p></div></section>
+        <section class="screen" id="reveal" aria-labelledby="revealTitle" hidden><div class="reveal-content content-narrow"><p class="eyebrow">For the person at the center of this</p><h2 id="revealTitle" class="display"><span id="revealText">Happy Birthday</span><span class="accent-dot">.</span></h2><p class="lede">Today is yours. I wanted to give you a few minutes that feel like us.</p><button class="primary-button" id="discoverButton" type="button">See what I made <span aria-hidden="true">&#8594;</span></button></div></section>
+        <section class="screen" id="chapters" aria-labelledby="chaptersTitle" hidden><div class="chapter-hub content-wide"><div class="section-heading"><p class="eyebrow">A few things I wanted to say</p><h2 id="chaptersTitle">Choose a chapter.</h2><p class="lede">Start anywhere. The story will keep your place.</p></div><div class="chapter-grid"><button class="chapter-card" data-go="letter" type="button"><span class="chapter-number">01</span><span class="chapter-icon" aria-hidden="true">&#9825;</span><strong>A letter</strong><span>Words I should say more often.</span><small class="chapter-status">Open chapter</small></button><button class="chapter-card" data-go="memories" type="button"><span class="chapter-number">02</span><span class="chapter-icon" aria-hidden="true">&#9671;</span><strong>Our memories</strong><span>Five photographs, one little timeline.</span><small class="chapter-status">Open chapter</small></button><button class="chapter-card" data-go="gift" type="button"><span class="chapter-number">03</span><span class="chapter-icon" aria-hidden="true">&#10022;</span><strong>A surprise</strong><span>There is one more thing waiting.</span><small class="chapter-status">Open chapter</small></button></div><div class="hub-footer"><p id="hubMessage">Three chapters. No wrong order.</p><button class="text-button hidden" id="continueButton" type="button">Continue the story <span aria-hidden="true">&#8594;</span></button></div></div></section>
+        <section class="screen chapter-screen" id="letter" aria-labelledby="letterTitle" hidden><div class="content-reading"><button class="back-link" data-go="chapters" type="button">&#8592; All chapters</button><p class="eyebrow">Chapter 01 / a letter</p><h2 id="letterTitle">There is something<br><em>I never properly told you.</em></h2><div class="letter-paper" id="letterPaper"></div><button class="primary-button" id="letterNext" type="button">Read the next part <span aria-hidden="true">&#8594;</span></button></div></section>
+        <section class="screen chapter-screen" id="memories" aria-labelledby="memoriesTitle" hidden><div class="content-wide memory-content"><button class="back-link" data-go="chapters" type="button">&#8592; All chapters</button><div class="section-heading memory-heading"><p class="eyebrow">Chapter 02 / our memories</p><h2 id="memoriesTitle">A few moments<br><em>worth keeping.</em></h2></div><article class="memory-frame"><div class="memory-image-wrap"><img id="memoryImage" class="memory-image" src="Pictures/L1.jpg" alt="A memory from our story"></div><div class="memory-copy"><p class="memory-index" id="memoryIndex">01 / 05</p><h3 id="memoryTitle">[MEMORY_TITLE]</h3><p id="memoryDate" class="memory-date">[DATE]</p><p id="memoryText">[PERSONAL_MEMORY]</p><button class="secondary-button" id="nextMemory" type="button">Reveal the next memory <span aria-hidden="true">&#8594;</span></button></div></article></div></section>
+        <section class="screen chapter-screen" id="gift" aria-labelledby="giftTitle" hidden><div class="content-narrow gift-content"><button class="back-link" data-go="chapters" type="button">&#8592; All chapters</button><p class="eyebrow">Chapter 03 / a surprise</p><h2 id="giftTitle">One last little<br><em>thing for you.</em></h2><p class="lede" id="giftInstruction">There is no rush. Open it when you are ready.</p><button class="gift-box" id="giftBox" type="button" aria-label="Open the gift"><span class="gift-glow"></span><span class="gift-lid"></span><span class="gift-body"></span><span class="gift-ribbon"></span></button><div class="gift-reveal" id="giftReveal" aria-live="polite" hidden><p class="eyebrow">You found the softest part</p><p>My favorite future is the one that still has you in it.</p><button class="text-button" id="secretPrompt" type="button">There is something hidden here <span aria-hidden="true">&#8594;</span></button></div><div class="secret-box" id="secretBox" hidden><label for="secretWord">A tiny secret, if you know it</label><div class="secret-row"><input id="secretWord" type="text" autocomplete="off" placeholder="A word only we would know"><button class="secondary-button" id="unlockSecret" type="button">Unlock</button></div><p id="secretFeedback" role="status"></p></div></div></section>
+        <section class="screen chapter-screen" id="future" aria-labelledby="futureTitle" hidden><div class="content-wide future-content"><p class="eyebrow">The next chapter is unwritten</p><h2 id="futureTitle">And this is<br><em>not the end.</em></h2><div class="future-grid"><article><span>01</span><p>[NEXT_PLACE_WE_WANT_TO_VISIT]</p></article><article><span>02</span><p>[THING_WE_WANT_TO_DO_TOGETHER]</p></article><article><span>03</span><p>[DREAM]</p></article></div><button class="primary-button" id="finalButton" type="button">One last thing <span aria-hidden="true">&#8594;</span></button></div></section>
+        <section class="screen" id="final" aria-labelledby="finalTitle" hidden><div class="final-content content-narrow"><p class="eyebrow">After everything</p><h2 id="finalTitle">You have become<br><em>one of the most important parts of my life.</em></h2><p class="final-message">And if I could choose one thing, it would be to keep making memories with you.</p><p class="final-signoff">Happy Birthday, <span data-name>[HER_NAME]</span>.<br><span>Here's to everything we've lived<br>and everything still waiting for us.</span><br><br>— [YOUR_NAME]</p><button class="text-button" id="restartButton" type="button">Read it again <span aria-hidden="true">&#8634;</span></button></div></section>
+    </main>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
     <script src="script.js"></script>
-
 </body>
-
 </html>
-```
